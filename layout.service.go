@@ -64,7 +64,7 @@ func checkDuplicateLayoutID(ctx *gin.Context) {
 }
 
 func getLayoutsService(ctx *gin.Context) (*[]db.BpmAdmLayout, error) {
-	getLayoutParam := GetLayoutsParams{Limit:1, Offset:0, Code:"11", IDAsc:true, IDDesc:false, CodeAsc:true, CodeDesc:false}
+	getLayoutParam := db.GetLayoutsParams{Limit:1, Offset:0, Code:"11", IDAsc:true, IDDesc:false, CodeAsc:true, CodeDesc:false}
 	layouts, err := db.StoreDB.GetLayouts(ctx,getLayoutParam)
 	if err != nil {
 		return nil, err
